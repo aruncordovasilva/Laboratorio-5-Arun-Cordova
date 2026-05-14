@@ -77,9 +77,9 @@ int getWeight(Graph* g, const char* label1, const char* label2) {
         List* lista = pair->value;
         int size = list_size(lista);
         Edge* ed = list_first(lista);
-        for(int i=0; i<size-1; i++){
+        for(int i=0; i<size; i++){
             if(strcpy(ed->target,(char*)label2) == 0) return ed->weight;
-            list_next(lista);
+            ed = list_next(lista);
         }
     }
     // Si no existe el origen o terminamos de iterar sin encontrar el destino

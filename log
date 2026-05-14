@@ -721,3 +721,17 @@ Thu May 14 04:54:21 AM UTC 2026:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 7fbba38
+Thu May 14 04:55:12 AM UTC 2026: 
+ graph.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:75:19: error: initialization of ‘List *’ from incompatible pointer type ‘MapPair *’ [-Wincompatible-pointer-types]
+   75 |     List* lista = map_search(g->adjacencyMap,(char*)label1);
+      |                   ^~~~~~~~~~
+graph.c:76:8: error: ‘pair’ undeclared (first use in this function)
+   76 |     if(pair != NULL){
+      |        ^~~~
+graph.c:76:8: note: each undeclared identifier is reported only once for each function it appears in
+d320387

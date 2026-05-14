@@ -56,8 +56,8 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     ed1->target=(char*)src;
     ed2->weight= weight;
     ed2->target=(char*)dest;
-    list_pushBack(lista1, ed1);
-    list_pushBack(lista2, ed2);
+    list_pushBack(lista2, ed1);
+    list_pushBack(lista1, ed2);
 
 
 

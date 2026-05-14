@@ -735,3 +735,20 @@ graph.c:76:8: error: ‘pair’ undeclared (first use in this function)
       |        ^~~~
 graph.c:76:8: note: each undeclared identifier is reported only once for each function it appears in
 d320387
+Thu May 14 04:56:35 AM UTC 2026: 
+ graph.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:79:26: error: expected statement before ‘)’ token
+   79 |         while(ed != NULL)){
+      |                          ^
+graph.c:79:9: error: this ‘while’ clause does not guard... [-Werror=misleading-indentation]
+   79 |         while(ed != NULL)){
+      |         ^~~~~
+graph.c:79:27: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+   79 |         while(ed != NULL)){
+      |                           ^
+cc1: all warnings being treated as errors
+7bbf930

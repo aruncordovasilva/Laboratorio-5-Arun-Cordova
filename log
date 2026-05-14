@@ -614,3 +614,20 @@ Thu May 14 03:49:58 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 ac7e3c8
+Thu May 14 04:09:15 AM UTC 2026: 
+ graph.c | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:49:19: error: initialization of ‘List *’ from incompatible pointer type ‘Map *’ [-Wincompatible-pointer-types]
+   49 |     List* lista = g->adjacencyMap;
+      |                   ^
+graph.c:53:16: error: assignment discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   53 |     ed1->target=src;
+      |                ^
+graph.c:55:16: error: assignment discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   55 |     ed2->target=dest;
+      |                ^
+cc1: all warnings being treated as errors
+8f1487e

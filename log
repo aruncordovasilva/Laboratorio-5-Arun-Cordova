@@ -651,3 +651,13 @@ graph.c:49:34: error: invalid use of incomplete typedef ‘Map’
    49 |     List* lista = g->adjacencyMap->ls;
       |                                  ^~
 19a9986
+Thu May 14 04:11:14 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:49:34: error: invalid use of incomplete typedef ‘Map’
+   49 |     List* lista = g->adjacencyMap->pair->value;
+      |                                  ^~
+9c25a46

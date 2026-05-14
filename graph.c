@@ -34,7 +34,7 @@ Graph* createGraph() {
 }
 
 void addNode(Graph* g, const char* label) {
-    map_insert(g->adjacencyMap, (is_equal_string) label, NULL);
+    map_insert(g->adjacencyMap, (is_equal_string)label, NULL);
 
     
     if (!g || !label) return;

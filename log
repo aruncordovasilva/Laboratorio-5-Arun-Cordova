@@ -671,3 +671,18 @@ graph.c:49:34: error: invalid use of incomplete typedef ‘Map’
    49 |     List* lista = g->adjacencyMap->value;
       |                                  ^~
 597d406
+Thu May 14 04:15:44 AM UTC 2026: 
+ graph.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addEdge’:
+graph.c:49:49: error: passing argument 2 of ‘map_search’ discards ‘const’ qualifier from pointer target type [-Werror=discarded-qualifiers]
+   49 |     MapPair* pair = map_search(g->adjacencyMap, src);
+      |                                                 ^~~
+In file included from graph.c:8:
+map.h:22:37: note: expected ‘void *’ but argument is of type ‘const char *’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                               ~~~~~~^~~
+cc1: all warnings being treated as errors
+a31c71c

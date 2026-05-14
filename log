@@ -72,3 +72,17 @@ Thu May 14 03:18:08 AM UTC 2026:
  1 file changed, 4 insertions(+), 1 deletion(-)
  tests:  0|0
 6277e94
+Thu May 14 03:19:53 AM UTC 2026: 
+ graph.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:32:17: error: too many arguments to function ‘map_create’
+   32 |     Map* newM = map_create(NULL, NULL);
+      |                 ^~~~~~~~~~
+In file included from graph.c:8:
+map.h:14:6: note: declared here
+   14 | Map *map_create(int (*is_equal)(void *key1, void *key2)); // unsorted map
+      |      ^~~~~~~~~~
+e3b8812

@@ -125,3 +125,17 @@ graph.c:32:28: error: expected expression before ‘int’
    32 |     Map* newM = map_create(int (*is_equal)(void *key1, void *key2));
       |                            ^~~
 ab5eee8
+Thu May 14 03:21:36 AM UTC 2026: 
+ graph.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘createGraph’:
+graph.c:32:30: error: ‘is_equal’ undeclared (first use in this function)
+   32 |     Map* newM = map_create((*is_equal)(void *key1, void *key2));
+      |                              ^~~~~~~~
+graph.c:32:30: note: each undeclared identifier is reported only once for each function it appears in
+graph.c:32:40: error: expected expression before ‘void’
+   32 |     Map* newM = map_create((*is_equal)(void *key1, void *key2));
+      |                                        ^~~~
+5b4e0e4

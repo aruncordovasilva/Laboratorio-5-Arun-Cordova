@@ -8,6 +8,8 @@
 #include "map.h"
 // Se asume la inclusión de Map.h y List.h
 
+typedef Node Node;
+
 /* =========================================
  *         ESTRUCTURAS INTERNAS
  * ========================================= */
@@ -34,7 +36,7 @@ Graph* createGraph() {
 }
 
 void addNode(Graph* g, const char* label) {
-    Void* newNode = (Node*)malloc(sizeof(Node));
+    Node* newNode = (Node*)malloc(sizeof(Node));
     map_insert(g->adjacencyMap, label, newNode);
     if (!g || !label) return;
 

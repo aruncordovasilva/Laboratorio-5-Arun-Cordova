@@ -34,7 +34,8 @@ Graph* createGraph() {
 }
 
 void addNode(Graph* g, const char* label) {
-    map_insert(g->adjacencyMap, (is_equal_string)label, NULL);
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    map_insert(g->adjacencyMap, label, newNode);
 
     
     if (!g || !label) return;

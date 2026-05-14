@@ -34,12 +34,14 @@ Graph* createGraph() {
 }
 
 void addNode(Graph* g, const char* label) {
-    Node* newNode = (Node*)malloc(sizeof(Node));
-    map_insert(g->adjacencyMap, label, newNode);
-
-    
     if (!g || !label) return;
 
+    if(map_search((g->adjacencyMap, label) != NULL) return;
+
+    List * listaEdge = list_create();
+    map_insert(g->adjacencyMap, label, listaEdge);
+
+    
 }
 
 void addEdge(Graph* g, const char* src, const char* dest, int weight) {

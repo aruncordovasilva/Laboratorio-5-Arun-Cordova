@@ -540,3 +540,36 @@ map.h:18:33: note: expected ‘void *’ but argument is of type ‘const char *
       |                           ~~~~~~^~~
 cc1: all warnings being treated as errors
 99b09ed
+Thu May 14 03:47:54 AM UTC 2026: 
+ graph.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘addNode’:
+graph.c:39:35: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   39 |     if(map_search((g->adjacencyMap, label) != NULL) return;
+      |                                   ^
+graph.c:39:44: error: passing argument 1 of ‘map_search’ makes pointer from integer without a cast [-Wint-conversion]
+   39 |     if(map_search((g->adjacencyMap, label) != NULL) return;
+      |                                            ^
+      |                                            |
+      |                                            int
+In file included from graph.c:8:
+map.h:22:26: note: expected ‘Map *’ but argument is of type ‘int’
+   22 | MapPair *map_search(Map *map, void *key);
+      |                     ~~~~~^~~
+graph.c:39:8: error: too few arguments to function ‘map_search’
+   39 |     if(map_search((g->adjacencyMap, label) != NULL) return;
+      |        ^~~~~~~~~~
+map.h:22:10: note: declared here
+   22 | MapPair *map_search(Map *map, void *key);
+      |          ^~~~~~~~~~
+graph.c:39:52: error: expected ‘)’ before ‘return’
+   39 |     if(map_search((g->adjacencyMap, label) != NULL) return;
+      |       ~                                            ^~~~~~~
+      |                                                    )
+graph.c:45:1: error: expected expression before ‘}’ token
+   45 | }
+      | ^
+cc1: all warnings being treated as errors
+9182290

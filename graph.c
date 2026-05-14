@@ -91,6 +91,7 @@ List* getAdjacentLabels(Graph* g, const char* label) {
     MapPair* pair = map_search(g->adjacencyMap,(char*)label);
     if(pair == NULL) return NULL;
     List* lista = pair->value; 
+    return lista;
 }
 
 void destroyGraph(Graph* g) {

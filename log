@@ -32,3 +32,22 @@ graph.h:13:8: note: previous definition of ‘createGraph’ with type ‘Graph 
    13 | Graph* createGraph(){
       |        ^~~~~~~~~~~
 6df99e3
+Thu May 14 03:14:00 AM UTC 2026: 
+Compilation failed
+In file included from graph.c:6,
+                 from test.c:5:
+graph.h: In function ‘createGraph’:
+graph.h:14:40: error: invalid application of ‘sizeof’ to incomplete type ‘Graph’
+   14 |     Graph* new = (Graph*)malloc(sizeof(Graph));
+      |                                        ^~~~~
+graph.h:15:8: error: invalid use of incomplete typedef ‘Graph’
+   15 |     new->adjacencyMap = NULL;
+      |        ^~
+graph.c: At top level:
+graph.c:29:8: error: redefinition of ‘createGraph’
+   29 | Graph* createGraph() {
+      |        ^~~~~~~~~~~
+graph.h:13:8: note: previous definition of ‘createGraph’ with type ‘Graph *()’
+   13 | Graph* createGraph(){
+      |        ^~~~~~~~~~~
+b4af24f

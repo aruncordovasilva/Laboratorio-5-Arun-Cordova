@@ -757,3 +757,29 @@ Thu May 14 04:56:56 AM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 a1c9ea5
+Thu May 14 04:57:23 AM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘getWeight’:
+graph.c:80:48: error: passing argument 2 of ‘strcpy’ makes pointer from integer without a cast [-Wint-conversion]
+   80 |             if(strcpy(ed->target,(char*)label1 == 0) return ed->weight;
+      |                                  ~~~~~~~~~~~~~~^~~~
+      |                                                |
+      |                                                int
+In file included from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/features.h:511,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/libc-header-start.h:33,
+                 from /nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/stdio.h:28,
+                 from test.c:1:
+/nix/store/41pf3md9zgpda9kwh6rzn5kaddf7i0lp-glibc-2.40-66-dev/include/bits/string_fortified.h:77:1: note: expected ‘const char *’ but argument is of type ‘int’
+   77 | __NTH (strcpy (__fortify_clang_overload_arg (char *, __restrict, __dest),
+      | ^~~~~
+graph.c:80:53: error: expected ‘)’ before ‘return’
+   80 |             if(strcpy(ed->target,(char*)label1 == 0) return ed->weight;
+      |               ~                                     ^~~~~~~
+      |                                                     )
+graph.c:82:9: error: expected expression before ‘}’ token
+   82 |         }
+      |         ^
+8b906e2

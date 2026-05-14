@@ -10,3 +10,25 @@ Thu May 14 02:52:51 AM UTC 2026:
  tests:  0|6
 ========================================
 48ee252
+Thu May 14 03:13:38 AM UTC 2026: 
+Compilation failed
+In file included from graph.c:6,
+                 from test.c:5:
+graph.h: In function ‘createGraph’:
+graph.h:14:33: error: implicit declaration of function ‘sizeo’ [-Wimplicit-function-declaration]
+   14 |     Graph* new = (Graph*)malloc(sizeo(Graph));
+      |                                 ^~~~~
+graph.h:14:39: error: expected expression before ‘Graph’
+   14 |     Graph* new = (Graph*)malloc(sizeo(Graph));
+      |                                       ^~~~~
+graph.h:15:8: error: invalid use of incomplete typedef ‘Graph’
+   15 |     new->adjacencyMap = NULL;
+      |        ^~
+graph.c: At top level:
+graph.c:29:8: error: redefinition of ‘createGraph’
+   29 | Graph* createGraph() {
+      |        ^~~~~~~~~~~
+graph.h:13:8: note: previous definition of ‘createGraph’ with type ‘Graph *()’
+   13 | Graph* createGraph(){
+      |        ^~~~~~~~~~~
+6df99e3

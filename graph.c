@@ -109,7 +109,7 @@ void destroyGraph(Graph* g) {
             free(e);         // Liberamos la arista
             e = (Edge*)list_next(edgesList);
         }
-        pair = map_next(g->adjacencyMap);
+
         // 2. Liberar la Lista
         list_clean(edgesList);
         free(edgesList);
@@ -117,7 +117,7 @@ void destroyGraph(Graph* g) {
         // 3. Liberar la llave del mapa (el label origen)
         free(label);
 
-      
+        pair = map_next(g->adjacencyMap);
     }
 
     // 4. Limpiar y liberar el mapa y el grafo

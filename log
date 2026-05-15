@@ -842,3 +842,23 @@ Fri May 15 02:40:55 PM UTC 2026:
  1 file changed, 2 insertions(+), 3 deletions(-)
  tests:  0|0
 6a44947
+Fri May 15 02:42:04 PM UTC 2026: 
+ graph.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+graph.c: In function ‘destroyGraph’:
+graph.c:112:24: error: pointer ‘edgesList’ may be used after ‘free’ [-Werror=use-after-free]
+  112 |             e = (Edge*)list_next(edgesList);
+      |                        ^~~~~~~~~~~~~~~~~~~~
+graph.c:106:9: note: call to ‘free’ here
+  106 |         free(edgesList);
+      |         ^~~~~~~~~~~~~~~
+graph.c:108:26: error: pointer ‘edgesList’ used after ‘free’ [-Werror=use-after-free]
+  108 |         Edge* e = (Edge*)list_first(edgesList);
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+graph.c:106:9: note: call to ‘free’ here
+  106 |         free(edgesList);
+      |         ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+4c26845

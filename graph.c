@@ -102,16 +102,14 @@ void destroyGraph(Graph* g) {
         char* label = (char*)pair->key;
         List* edgesList = (List*)pair->value;
 
-        list_clean(edgesList);
-        free(edgesList);
         // 1. Liberar cada Arista (y su string 'target')
         Edge* e = (Edge*)list_first(edgesList);
         while (e != NULL) {
-            free(e->target); // Liberamos la copia del string destino
             free(e);         // Liberamos la arista
             e = (Edge*)list_next(edgesList);
         }
-
+        list_clean(edgesList);
+        free(edgesList);
         // 2. Liberar la Lista
 
         // 3. Liberar la llave del mapa (el label origen)

@@ -53,9 +53,9 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     Edge* ed1 = (Edge*)malloc(sizeof(Edge));
     Edge* ed2 = (Edge*)malloc(sizeof(Edge));
     ed1->weight= weight;
-    ed1->target=(char*)dest;
+    ed1->target=(char*)src;
     ed2->weight= weight;
-    ed2->target=(char*)src;
+    ed2->target=(char*)dest;
     list_pushBack(lista2, ed1);
     list_pushBack(lista1, ed2);
 }
@@ -105,7 +105,6 @@ void destroyGraph(Graph* g) {
         // 1. Liberar cada Arista (y su string 'target')
         Edge* e = (Edge*)list_first(edgesList);
         while (e != NULL) {
-            free(e->target); // Liberamos la copia del string destino
             free(e);         // Liberamos la arista
             e = (Edge*)list_next(edgesList);
         }

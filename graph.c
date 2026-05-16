@@ -53,9 +53,9 @@ void addEdge(Graph* g, const char* src, const char* dest, int weight) {
     Edge* ed1 = (Edge*)malloc(sizeof(Edge));
     Edge* ed2 = (Edge*)malloc(sizeof(Edge));
     ed1->weight= weight;
-    ed1->target=(char*)src;
+    ed1->target=(char*)dest;
     ed2->weight= weight;
-    ed2->target=(char*)dest;
+    ed2->target=(char*)src;
     list_pushBack(lista2, ed1);
     list_pushBack(lista1, ed2);
 }

@@ -105,6 +105,7 @@ void destroyGraph(Graph* g) {
         // 1. Liberar cada Arista (y su string 'target')
         Edge* e = (Edge*)list_first(edgesList);
         while (e != NULL) {
+            free(e->target); // Liberamos la copia del string destino
             free(e);         // Liberamos la arista
             e = (Edge*)list_next(edgesList);
         }
